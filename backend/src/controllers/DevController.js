@@ -47,7 +47,22 @@ module.exports = {
             sendMessage(sendSocketMessageTo, 'new-dev', dev);
         }
 
-        return response.json(dev);
+        return response.status(200).json(dev);
     },
+
+    async delete(request, response){
+        const { _id } = request.params;
+
+        try {
+            await Dev.findByIdAndDelete(_id)
+            return response.status(200).send({
+                message: 'Desenvolvedor removido com sucesso'
+            })
+        } catch (e) {
+            return response.status(500).send({
+                message: 'Falha ao remover desenvolvedor'
+            })
+        }
+    }
 
 }
