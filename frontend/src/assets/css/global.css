@@ -9,10 +9,10 @@
 
 html, body, #root {
   height: 100%;
+  background: #E5E6F0;
 }
 
 body {
-  background: #E5E6F0;
   -webkit-font-smoothing: antialiased;
 }
 

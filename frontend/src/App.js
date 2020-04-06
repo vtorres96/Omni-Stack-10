@@ -13,7 +13,7 @@ function App() {
   const [devs, setDevs] = useState([]);
 
   useEffect(() => {
-    async function loadDevs() {
+    const loadDevs = async () => {
       const response = await api.get('/devs');
 
       setDevs(response.data);
@@ -22,7 +22,7 @@ function App() {
     loadDevs();
   }, []);
 
-  async function handleAddDev(data) {
+  const handleAddDev = async (data) => {
     const response = await api.post('/devs', data)
 
     setDevs([...devs, response.data]);

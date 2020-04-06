@@ -23,7 +23,7 @@ function DevForm({ onSubmit }) {
     )
   }, []);
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     await onSubmit({
