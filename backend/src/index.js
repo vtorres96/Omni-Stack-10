@@ -5,9 +5,12 @@ const http = require("http");
 require("dotenv/config");
 
 const routes = require("./routes");
+const { setupWebsocket } = require('./websocket')
 
 const app = express();
 const server = http.Server(app);
+
+setupWebsocket(server);
 
 mongoose.connect(
   `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-bfkrt.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
