@@ -10,7 +10,6 @@ routes.post('/devs', DevController.store);
 
 routes.delete('/devs/delete/:_id', DevController.delete);
 
-
 routes.get('/search', SearchController.index);
 
 module.exports = routes;
